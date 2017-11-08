@@ -17,3 +17,9 @@ import android.view.ViewGroup
  */
 fun ViewGroup.inflate(@LayoutRes layout: Int, attachToRoot: Boolean = true): View =
         LayoutInflater.from(context).inflate(layout, this, attachToRoot)
+
+/**
+ * get the iterator of ViewGroup's children
+ */
+val ViewGroup.children: List<out View>
+    get() = (0 until childCount).map { getChildAt(it) }
